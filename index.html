@@ -1,2 +1,29 @@
+<html>
+<head>
+<title>Focus Scan</title>
+</head>
+<body>
+
 <h1>Focus Scan</h1>
 
+<p>
+<i>Last updated March, 2016</i>
+</p>
+
+<p>
+<b>Description.</b> The <i>Focus Scan</i> project investigates the use of <a href="https://en.wikipedia.org/wiki/Focus_stacking">focus stacking</a> as a starting point for the construction of <a href="https://en.wikipedia.org/wiki/3D_scanner">3D-scans</a> of real-world objects and scenes. The basic idea is simple: software controls a tethered digital camera, taking a sequence of images while rolling the focus. Software then processes the images, watching as different portions of the scene enter and exit focus. These observations, together with some simple optics equations, can be used to build a 3D reconstruction of the scene.
+</p>
+
+<p>
+<b>The tools.</b> The <i>Focus Scan</i> project is a collection of software tools for studying this approach to 3D scanning. The tools are geared toward experimenters: they are open source, written in Java, and minimally coupled to one another. We currently have 4 tools:
+</p>
+
+<ul>
+<li><a href="https://github.com/focusscan/bitwise">Bitwise</a>, a GUI application used to acquire input images using a tethered digital camera.</li>
+<li><a href="https://github.com/focusscan/exifdistance">Exifdistance</a>, a command-line tool which extracts focal-distance estimates from the meta-data contained in the input images. (We use this data as an initial estimate of the distance between the camera and those portions of the scene which are in-focus in a given image.)</li>
+<li><a href="https://github.com/focusscan/edgeocl">Edgeocl</a>, a command-line tool which uses an <a href="https://en.wikipedia.org/wiki/OpenCL">OpenCL</a> implementation of the <a href="https://en.wikipedia.org/wiki/Discrete_wavelet_transform">discrete wavelet transform</a> to <a href="https://en.wikipedia.org/wiki/Edge_detection">detect edges</a> in the input images. The output is formatted in <a href="http://www.hdfgroup.org/">HDF</a>. (We use this data to infer which portions of each image are in focus.)</li>
+<li><a href="https://github.com/focusscan/pointcloudbuilder">Pointcloudbuilder</a>, which uses the data from Exifdistance and Edgeocl to construct a 3D point-cloud of the scene. The output is formatted for use with <a href="http://pointclouds.org/">PCL</a>.</li>
+</ul>
+
+</body>
+</html>
