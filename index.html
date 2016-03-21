@@ -61,7 +61,7 @@ $$ D_N = \frac{sf^2}{f^2 + Nc(s - f)} $$
 $$ D_F = \frac{sf^2}{f^2 - Nc(s - f)} $$
 With some algebra we then get the following relation:
 $$ s = \frac{2 D_N D_F}{D_N + D_F} $$
-This last equation tells us that, by estimating the values of \(D_N\) and \(D_F\) for each pixel in our image sequence, we can compute (for each pixel) an estimate for \(s\). (Note that this equation does not mention \(f\), \(N\), or \(c\). In particular, we can use this equation without needing to estimate the camera's circle of confusion.)
+This last equation tells us that, by estimating the values of \(D_N\) and \(D_F\) for each pixel in our image sequence, we can compute (for each pixel) an estimate for \(s\), which we interpret as the distance between the camera and the portion of the schene which lands at that pixel. (Note that this equation does not mention \(f\), \(N\), or \(c\). In particular, we can use this equation without needing to estimate the camera's circle of confusion.)
 </p>
 
 <p>
